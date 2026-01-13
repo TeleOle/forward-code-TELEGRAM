@@ -1,10 +1,28 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
-RUN apt-get update && apt-get install -y ffmpeg
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
 
+# Set work directory
 WORKDIR /app
-COPY . .
 
+# Copy dependencies
+COPY requirements.txt .
+
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "main.py"]
+# Copy project files
+COPY . .
+
+# Create session directory
+RUN mkdir -p user_sessions
+
+# Railway uses PORT automatically (even if bot doesn't use it)
+ENV PORT=8080
+
+# Start bot
+CMD ["python", "bot.py"]
