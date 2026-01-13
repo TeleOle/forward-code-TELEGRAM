@@ -1,45 +1,32 @@
-# 🤖 Multi-User Telegram Auto-Forward Bot
+# Telegram Auto-Forward Bot
 
-A powerful Telegram bot + user-account hybrid that automatically forwards messages
-between channels and groups with **advanced filters, caption cleaning, watermarking,
-and multi-account support**.
+A powerful multi-user Telegram auto-forward bot with:
 
----
-
-## 🚀 Features
-
-✅ Multiple source → destination rules  
-✅ Telethon (MTProto) for **2GB+ file forwarding**  
-✅ Copy mode & Forward mode  
-✅ Caption cleaning (hashtags, links, emojis, mentions, phones, emails)  
-✅ Album (grouped media) handling  
-✅ Text & Logo watermark (Image + Video via FFmpeg)  
-✅ Per-user rules stored in SQLite  
-✅ Duplicate file protection  
-✅ Delay, header/footer, word replace  
-✅ Telegram Bot UI (inline buttons)
+- Multiple source → destination rules
+- Telethon + Bot API
+- Media filters & caption cleaning
+- Watermark support (image/video)
+- SQLite database
+- Railway-ready Docker deployment
 
 ---
 
-## 🧱 Tech Stack
+## 🚀 Deploy on Railway
 
-- **Python 3.10+**
-- `python-telegram-bot`
-- `Telethon`
-- `SQLite`
-- `FFmpeg`
-- `Pillow`
+### 1. Fork or Upload to GitHub
+Push this project to a GitHub repository.
 
----
+### 2. Create Railway Project
+- Go to https://railway.app
+- New Project → Deploy from GitHub
+- Select your repository
 
-## ⚙️ Environment Variables (Railway)
+### 3. Set Environment Variables
 
-Set these in **Railway → Variables**:
+In **Railway → Variables**:
 
 ```env
-TELEGRAM_API_ID=12345678
-TELEGRAM_API_HASH=your_api_hash_here
-TELEGRAM_BOT_TOKEN=1234567890:ABCDEF...
-ADMIN_USER_ID=123456789   # optional
-SESSION_DIR=user_sessions
-DATABASE_FILE=autoforward.db
+TELEGRAM_API_ID=123456
+TELEGRAM_API_HASH=your_api_hash
+TELEGRAM_BOT_TOKEN=your_bot_token
+ADMIN_USER_ID=123456789
