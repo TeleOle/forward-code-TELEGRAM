@@ -1,27 +1,5 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-
-# Virtual environment
-venv/
-.env
-.env.*
-
-# Telegram sessions
-user_sessions/
 *.session
-*.session-journal
-
-# Logs
-*.log
-
-# Database
+user_sessions/
+__pycache__/
+.env
 *.db
-*.sqlite3
-
-# OS
-.DS_Store
-Thumbs.db
